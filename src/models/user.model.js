@@ -58,7 +58,8 @@ userSchema.pre("save", async function (next) {
     next()
 })
 
-//create custom methods 
+//create custom methods  
+//and all access not by this User it is core moongodb feature it is  access by where you use this method 
 userSchema.methods.isPasswordCorrect = async function(password){
     return await bcrypt.compare(password, this.password)
 }
