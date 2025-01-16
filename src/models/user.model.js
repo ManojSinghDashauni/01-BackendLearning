@@ -90,5 +90,5 @@ userSchema.methods.generateRefreshToken = function(){
         }
     )
 }
-
+//note User is saved in databse  as lowerscase and plural ex- users
 export const User = mongoose.model("User",userSchema)
