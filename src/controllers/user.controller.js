@@ -381,6 +381,8 @@ const getUserChannelProfile = asyncHandler(async (req, res) => {
       },
     },
     {
+
+      //add 3 more element in user model
       $addFields: {
         subscribersCount: {
           $size: "$subscribers",
@@ -426,6 +428,7 @@ const getWatchHistory = asyncHandler(async (req, res) => {
   const user = await User.aggregate([
     {
       $match: {
+        //here mongoose give string id LIke '1323244' and we convert it mongodb id like Objetid('12323242')
         _id: new mongoose.Types.ObjectId(req.user._id),
       },
     },
